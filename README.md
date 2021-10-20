@@ -12,7 +12,7 @@
 1. Get the code:
     - Either... fork this repo then clone it
     - Or... clone this repo, rename the directory, then re-set git (`rm -r .git && git init`).
-1. Run `npm install`. This will run `bundle install` automatically.
+1. Run `npm install && bundle isntall`
     - Commit the `package-lock.json` and `Gemfile.lock` to your repo!
 
 ### Running

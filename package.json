@@ -7,7 +7,7 @@
         "watch:jekyll": "bundle exec jekyll serve --livereload --drafts --open",
         "lint": "eslint --cache --ignore-pattern '*.config.js' . && prettier --check .",
         "lint:fix": "eslint --cache --fix --ignore-pattern '*.config.js' . && prettier --write .",
-        "postinstall": "bundle install --path=vendor/bundle --jobs=4 --retry=3"
+        "postinstall": "echo 'node packages installed! Consider running bundle install next.'"
     },
     "dependencies": {
         "@tailwindcss/forms": "^0.3.3",
