@@ -1,0 +1,35 @@
+{
+    "private": true,
+    "scripts": {
+        "start": "concurrently -k --restart-tries 3 --restart-after 3000 -p [{name}] -n webpack,jekyll -c yellow,cyan npm:watch:webpack npm:watch:jekyll",
+        "watch:webpack": "encore dev --watch",
+        "watch:jekyll": "bundle exec jekyll serve --livereload --drafts --open",
+        "lint": "eslint --cache --ignore-pattern '*.config.js' . && prettier --check .",
+        "lint:fix": "eslint --cache --fix --ignore-pattern '*.config.js' . && prettier --write .",
+        "postinstall": "bundle install --path=vendor/bundle --jobs=4 --retry=3"
+    },
+    "dependencies": {
+        "@tailwindcss/forms": "^0.3.3",
+        "@tailwindcss/typography": "^0.4.1",
+        "alpinejs": "^3.2.3",
+        "autoprefixer": "^10.3.1",
+        "tailwindcss": "^2.2.7"
+    },
+    "devDependencies": {
+        "@symfony/webpack-encore": "^1.5.0",
+        "concurrently": "^6.2.0",
+        "eslint": "^7.32.0",
+        "eslint-config-airbnb-base": "^14.2.1",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-import": "^2.23.4",
+        "postcss-loader": "^6.1.1",
+        "prettier": "2.4.1",
+        "prettier-plugin-tailwind-css": "^1.5.0"
+    },
+    "browserslist": [
+        "> 0.5%",
+        "last 2 versions",
+        "Firefox ESR",
+        "not dead"
+    ]
+}
