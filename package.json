@@ -1,6 +1,7 @@
 {
     "private": true,
     "scripts": {
+        "prod": "encore prod",
         "start": "concurrently -k --restart-tries 3 --restart-after 3000 -p [{name}] -n webpack,jekyll -c yellow,cyan npm:watch:webpack npm:watch:jekyll",
         "watch:webpack": "encore dev --watch",
         "watch:jekyll": "bundle exec jekyll serve --livereload --drafts --open",
