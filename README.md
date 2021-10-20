@@ -14,6 +14,7 @@
     - Or... clone this repo, rename the directory, then re-set git (`rm -r .git && git init`).
 1. Run `npm install && bundle isntall`
     - Commit the `package-lock.json` and `Gemfile.lock` to your repo!
+1. In `_config.yml`, update the `baseurl` value as needed. [Learn more here!](https://mademistakes.com/mastering-jekyll/site-url-baseurl/)
 
 ### Running
 
