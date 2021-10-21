@@ -22,7 +22,15 @@
 <link rel="stylesheet" href="/jekyll-quickstart/assets/css/app.css" />
   </head>
   <body
-    class="font-sans leading-normal tracking-wider text-gray-900 bg-gray-100"
+    class="
+      flex flex-col
+      min-h-screen
+      font-sans
+      leading-normal
+      tracking-wider
+      text-gray-900
+      bg-gray-100
+    "
   ><header>
   <nav
     x-data="{showMobileMenu:false}"
@@ -119,8 +127,14 @@
     </div>
   </nav>
 </header>
-<main aria-label="Content"><p>Hello world, this is contact!</p>
-</main><footer></footer>
+<main aria-label="Content" class="flex-auto"><p>Hello world, this is contact!</p>
+</main><footer
+  class="flex flex-wrap items-center justify-between p-3 text-white bg-black"
+>
+  <span class="text-xs"
+    >&copy; 2021 Your awesome title.</span
+  >
+</footer>
 <script src="/jekyll-quickstart/assets/js/app.js"></script>
   </body>
 </html>
