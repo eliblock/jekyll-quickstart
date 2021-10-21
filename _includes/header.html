@@ -1,8 +1,42 @@
 <header>
   <nav
-    x-data="{showMobileMenu:false}"
+    x-data="
+      {
+        showMobileMenu: false,
+        showOverall: true,
+        timer: null,
+        lastScrollPosition: 0
+      }
+    "
+    x-show="showOverall"
+    x-transition:enter="transition ease-out duration-500"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="transition ease-in duration-700"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+    @scroll.window="
+      if (window.pageYOffset < lastScrollPosition) {
+        clearTimeout(timer);
+        timer = null;
+        showOverall = true;
+      };
+      if(timer == null) {
+        timer = setTimeout(() => showOverall = (window.pageYOffset < 50 || showMobileMenu) ? true : false, 5000);
+      };
+      lastScrollPosition = window.pageYOffset;
+    "
     @click.away="showMobileMenu = false"
-    class="flex flex-wrap items-center justify-between p-6 text-white bg-black"
+    class="
+      fixed
+      flex flex-wrap
+      items-center
+      justify-between
+      w-full
+      p-5
+      text-white
+      bg-black
+    "
   >
     <a href="{% link index.html %}"
       ><div class="flex items-center flex-shrink-0 mr-6 text-white">
@@ -24,7 +58,16 @@
     >
     <div class="md:hidden block">
       <button
-        @click="showMobileMenu=!showMobileMenu"
+        @click="
+          if (showMobileMenu) {
+            timer = setTimeout(() => showOverall = (window.pageYOffset < 50 || showMobileMenu) ? true : false, 5000);
+          } else {
+            clearTimeout(timer);
+            timer = null
+          };
+
+          showMobileMenu=!showMobileMenu;
+        "
         class="
           hover:text-white hover:border-white
           flex
