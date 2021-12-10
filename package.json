@@ -10,7 +10,7 @@
         "postinstall": "echo 'node packages installed! Consider running bundle install next.'"
     },
     "dependencies": {
-        "@tailwindcss/forms": "^0.3.3",
+        "@tailwindcss/forms": "^0.4.0",
         "@tailwindcss/typography": "^0.4.1",
         "alpinejs": "^3.7.0",
         "autoprefixer": "^10.4.0",
